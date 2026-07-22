@@ -52,8 +52,9 @@ async function downloadData() {
     try {
         let result = await fetch({ actor, cinema, movie }, Promise.all())
 
-        let res = await JSON.parse(actor)
-
+        let res1 = await JSON.parse(actor)
+let res2 = await JSON.parse(cinema)
+let res3 = await JSON.parse(movie)
         console.log(res)
     }
 
