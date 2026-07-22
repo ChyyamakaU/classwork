@@ -11,11 +11,11 @@ async function fetchData() {
 
 
     let timeout = setTimeout(() => {
-        controller.abort(new Error ("request was cancelled"))
+        controller.abort(new Error("request was cancelled"))
     }, 2000)
 
     try {
-        const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+        let response = await fetch("https://jsonplaceholder.typicode.com/posts", {
         })
 
         let result = await response.json()
@@ -34,9 +34,6 @@ async function fetchData() {
 }
 fetchData()
 
-
-
-
 // Create an asynchronous function that downloads data from three JSON files at the same time using Promise.all().
 
 // The files are:
@@ -50,13 +47,21 @@ fetchData()
 
 
 
-async function downloadData(){
+async function downloadData() {
+
+    try {
+        let result = await fetch({ actor, cinema, movie }, Promise.all())
+
+        let res = await JSON.parse(actor)
+
+        console.log(res)
+    }
 
 
-fetch
-
-
+catch (error) {
+        console.log(error.message)
+    }
 }
 
-
+downloadData()
 
