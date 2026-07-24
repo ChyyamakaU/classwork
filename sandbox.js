@@ -50,19 +50,19 @@ fetchData()
 async function downloadData() {
 
     try {
-        let result = await fetch({ actor, cinema, movie }, Promise.all())
+        let result = await fetch('todos/actor.json').then((response)=>{
+            console.log('resolved', response)})
 
-        let res1 = await JSON.parse(actor)
-let res2 = await JSON.parse(cinema)
-let res3 = await JSON.parse(movie)
-        console.log(res)
+      
+// .then(res => res.json())
+//       .then(data=> {console.log(data) })
+        
     }
-
 
 catch (error) {
         console.log(error.message)
     }
 }
 
-downloadData()
+// downloadData()
 
